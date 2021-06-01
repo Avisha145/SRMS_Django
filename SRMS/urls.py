@@ -19,10 +19,15 @@ from Login.views import login_view
 from Registration.views import registration_view,import_user_view,homepage_view
 from Admin.views import admin_view
 from Director.views import director_view
-from Faculty.views import faculty_view
+from Faculty.views import faculty_view,faculty_mgmt_view
 from Student.views import student_view
 from Results.views import import_result_view,report_view,student_result_view
 from Course.views import course_mgmt_view
+from Semester.views import semester_view,semester_update_view
+from Division.views import division_view
+from Subject.views import subject_view
+
+
 
 urlpatterns = [
     path('',login_view, name=''),
@@ -39,4 +44,11 @@ urlpatterns = [
     path('course_mgmt/', course_mgmt_view, name='course_mgmt'),
     path('report/', report_view, name='report'),
     path('student_result/', student_result_view, name='student_result'),
+    path('semester/', semester_view, name='semester'),
+    path('division/', division_view, name='division'),
+    path('subject/', subject_view, name='subject'),
+    path('faculty_mgmt/', faculty_mgmt_view, name='faculty_mgmt'),
+    path('semester_update/', semester_update_view, name='semester_update'),
+
+
 ]
