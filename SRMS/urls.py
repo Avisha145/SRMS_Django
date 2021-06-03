@@ -26,6 +26,7 @@ from Course.views import course_mgmt_view
 from Semester.views import semester_view,semester_update_view
 from Division.views import division_view
 from Subject.views import subject_view
+from Exam.views import exam_mgmt_view
 
 
 
@@ -49,6 +50,8 @@ urlpatterns = [
     path('subject/', subject_view, name='subject'),
     path('faculty_mgmt/', faculty_mgmt_view, name='faculty_mgmt'),
     path('semester_update/', semester_update_view, name='semester_update'),
+    path('exam/', exam_mgmt_view, name='exam'),
+
 
 
 ]

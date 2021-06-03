@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Semester',
     'Division',
     'Subject',
+    'Exam',
 
     #Django Apps
     'django.contrib.admin',

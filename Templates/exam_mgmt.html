@@ -8,7 +8,7 @@
 	<title></title>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title%} Division Management {% endblock title %}</title>
+  <title>{% block title%} Exam Management {% endblock title %}</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -43,7 +43,7 @@
 
 <body>
 	<!-- Page header -->
-	{% block header %} Division Management {% endblock header %}
+	{% block header %} Exam Management {% endblock header %}
 
 	{% block content %}
   <div class="card card-primary" style="width:40%; margin: 4% 30% 0% 30%">
@@ -56,37 +56,39 @@
               <!-- /.card-header -->
 
               <!-- form start -->
-              <form id="division_mgmt" novalidate="novalidate" method="get">
+              <form id="exam_mgmt" novalidate="novalidate" method="get">
                 <div class="card-body">
+
                   <div class="form-group">
-                    <label for="division_name">Enter Division Name</label>
-                    <div class="input-group-prepend">
-                    <!-- <span class="input-group-text"><i class="fas fa-user"></i></span> -->
-                    <input type="text" name="division_name" class="form-control " id="division_name" placeholder="Division-A" aria-invalid="true" aria-describedby="divisionr_name">
+                     <select class="form-control">
+                          <option selected="true">--Select Subject--</option>
+                          <option>Python</option>
+                          <option>Data Structures</option>
+                          <option>Computer Networking</option>
+                          <option>Mobile Computing </option>
+                        </select>
                     </div>
-                  </div>
 
-                    <div class="form-group">
-                        <select class="form-control">
-                          <option selected="true">--Select Course--</option>
-                          <option>MCA</option>
-                          <option>MBA</option>
-                          <option>BCA</option>
-                          <option>BBA</option>
-                        </select>
+                     <div class="form-group">
+                    <label for="exam_name">Enter Exam Name</label>
+                    <input type="text" name="ename" class="form-control" id="ename" placeholder="Python Unit-1" aria-invalid="true" aria-describedby="username-error">
                   </div>
-
+                 
                   <div class="form-group">
-                        <select class="form-control">
-                          <option selected="true">--Select Semester--</option>
-                          <option>Semester 1</option>
-                          <option>Semester 2</option>
-                          <option>Semester 3</option>
-                          <option>Semester 4</option>
-                        </select>
+                    <label for="exam_name">Enter Total Marks </label>
+                    <input type="number" name="emarks" class="form-control" id="emarks" placeholder="70" aria-invalid="true" aria-describedby="username-error">
                   </div>
-                    <!--class="form-control is-invalid"-->
-                  <!--<span id="exampleInputEmail1-error" class="error invalid-feedback">Please enter a vaild email address</span>-->
+
+                   <div class="form-group">
+                    <label for="exam_name">Enter Passing  Marks </label>
+                    <input type="number" name="epmarks" class="form-control" id="epmarks" placeholder="35" aria-invalid="true" aria-describedby="username-error">
+                  </div>
+
+                   <div class="form-group">
+                    <label for="exam_name">Enter Exam Date </label>
+                    <input type="date" name="edate" class="form-control" id="edate" placeholder="01/10/2021" aria-invalid="true" aria-describedby="username-error">
+                  </div>
+               
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
@@ -109,7 +111,6 @@
                 </div>
               </form>
   </div>
-
   <div class="card card-info" style="margin-top: 8%">
                <div class="card-header">
                 <h3 class="card-title" style="font-weight: bold; font-family: sans-serif; height: 13px;">
@@ -119,40 +120,61 @@
               <!-- /.card-header -->
               
               <div class="card-body">
-                <div id="example3_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="report" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="report" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
 
                   <thead>
                   <tr role="row">
                    
-                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Division Id</th>
-                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Division Name</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Exam Id</th>
                     <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Semester</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Subject Name</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Exam Name</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Total Marks</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Passing Marks</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Exam Date</th>
                   </tr>
                   </thead>
 
                   <tbody>
                   <tr class="odd">
                     <td>1</td>
-                    <td>Division-A</td>
-                    <td>Semester-1</td>
+                    <td>Sem-2</td>
+                    <td>Python</td>
+                    <td>Python Unit-1 to Unit-3</td>
+                    <td>50</td>
+                    <td>35</td>
+                    <td>05/10/2021</td>
+                    
                   </tr>
 
                   <tr class="even">
                     <td>2</td>
-                    <td>Division-B</td>
-                    <td>Semester-2</td>
+                    <td>Sem-2</td>
+                    <td>Mobile Computing</td>
+                    <td>Mobile Computing Unit-1 to Unit-3</td>
+                    <td>50</td>
+                    <td>35</td>
+                    <td>07/10/2021</td>
                   </tr>
 
                   <tr class="odd">
                     <td>3</td>
-                    <td>Division-A</td>
-                    <td>Semester-3</td>
+                    <td>Sem-2</td>
+                    <td>Data Structures</td>
+                    <td>Data Structures Unit-1 to Unit-3</td>
+                    <td>50</td>
+                    <td>35</td>
+                    <td>09/10/2021</td>
                   </tr>
 
                   <tr class="even">
                     <td>4</td>
-                    <td>Division-B</td>
-                    <td>Semester-4</td>
+                    <td>Sem-2</td>
+                    <td>Computer Networking</td>
+                    <td>Computer Networking Unit-1 to Unit-3</td>
+                    <td>50</td>
+                    <td>35</td>
+                    <td>11/10/2021</td>
                   </tr>                  
                   </tbody>
                 
