@@ -10,3 +10,6 @@ def report_view(request):
 
 def student_result_view(request):
 	return render(request, 'student_result.html', {})
+
+def manual_result_view(request):
+	return render(request, 'manual_result.html', {})

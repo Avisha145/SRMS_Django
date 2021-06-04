@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
 # Create your views here.
-def subject_view(request):
-	return render(request, 'subject.html', {})
+def subject_mgmt_view(request):
+	return render(request, 'subject_mgmt.html', {})

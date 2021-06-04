@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SRMS | {% block title%} Dashboard {% endblock title %}</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'dist/img/cpi_logo_transparent.png' %}"/>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -66,7 +67,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{% static 'dist/img/cpi_logo.png' %}" alt="CPI LOGO" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light"><b>CPI MCA</b></span>
+      <span class="brand-text font-weight-light"><b>FACULTY</b></span>
     </a>
 
     <!-- Sidebar -->
@@ -77,7 +78,7 @@
           <img src="{% static 'dist/img/user8.jpg' %}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Sumit Jamnani</a>
+          <a href="#" class="d-block">Prof. Harish Morwani</a>
         </div>
       </div>
 
@@ -90,7 +91,7 @@
 
           <!-- Home Tab -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="{% url 'home' %} " class="nav-link active">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
@@ -115,21 +116,27 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="{% url 'semester_mgmt' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Semester</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="{% url 'division_mgmt' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Division</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="{% url 'subject_mgmt' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Subject</p>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="{% url 'exam_mgmt' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Exam</p>
                 </a>
               </li>
             </ul>
@@ -157,7 +164,7 @@
 
               <ul class="nav nav-treeview ml-2">
                 <li class="nav-item">
-                  <a href="./index.html" class="nav-link">
+                  <a href="{% url 'add_user' %}" class="nav-link">
                     <i class="far fa-plus-square nav-icon"></i>
                     <p>
                       Add Manually
@@ -178,22 +185,14 @@
               </li>
 
 
-              <!-- <li class="nav-item">
-                <a href="./index.html" class="nav-link">
-                  <i class="fa fa-chalkboard-teacher nav-icon"></i>
-                  <p>Manage Faculty</p>
-                </a>
-              </li> -->
-
-              
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="{% url 'update_student_profile' %}" class="nav-link">
                   <i class="fa fa-user-edit nav-icon"></i>
-                  <p>Update User Profile</p>
+                  <p>Update Student Profile</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="{% url 'semester_update' %}" class="nav-link">
                   <i class="fa fa-user-graduate nav-icon"></i>
                   <p>Semester Update</p>
                 </a>
@@ -203,7 +202,7 @@
 
           <!-- Results DropDown -->
           <li class="nav-item">
-            <a href="{% url 'import_result' %}" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Manage Results
@@ -212,9 +211,9 @@
             </a>
             <ul class="nav nav-treeview ml-2">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="{% url 'manual_result' %}" class="nav-link">
                   <i class="fa fa-plus-square nav-icon"></i>
-                  <p>Mannual Results</p>
+                  <p>Manual Results</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -238,12 +237,16 @@
           </li>
 
 
-            </ul>
+          <li class="nav-item">
+              <a href="{% url 'about_us' %}" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                 About Us
+                </p>
+              </a>
           </li>
 
-
-
-         </ul> 
+        </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
@@ -254,31 +257,36 @@
 
 <!----------------------------------------------------------------------------------------!-->
 
+  <div class="content-wrapper" style="min-height: 2168.88px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>{% block header %} {% endblock header %}</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section> 
+
+
 <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content">
     <!-- Main content -->
     <section class="content">
+      {% block content %}
       
-
-      <div class="col-xs-6" align="center">
-        <img src="{% static 'dist/img/cpi_logo1.png' %}" Height="285px" Width="276px"/>
-      </div>
-
-      <div class="col-xs-8" align="center">
-        <h1>
-        Shree Chimanbhai Patel Institute
-        </h1>
-      </div>
-
-
-      <div class="container-fluid">
-        {% block content %}
-        {% endblock content %}
-      </div><!-- /.container-fluid -->
-    
+      {% endblock content %}
+    <!-- </div> -->
     </section>
     <!-- /.content -->
   </div>
+  </div>
+
+
+
+
+
   <!-- /.content-wrapper -->
   <footer class="main-footer" style="text-align: center;">
     <strong>Copyright &copy; 2021-2022 <a href="#">CPI MCA</a>.</strong>

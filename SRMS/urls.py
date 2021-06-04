@@ -16,17 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Login.views import login_view
-from Registration.views import registration_view,import_user_view,homepage_view
-from Admin.views import admin_view
+from Registration.views import registration_view,import_user_view,homepage_view,add_user_view
+from Admin.views import admin_view,about_us_view
 from Director.views import director_view
 from Faculty.views import faculty_view,faculty_mgmt_view
 from Student.views import student_view
-from Results.views import import_result_view,report_view,student_result_view
+from Results.views import import_result_view,report_view,student_result_view,manual_result_view 
 from Course.views import course_mgmt_view
-from Semester.views import semester_view,semester_update_view
-from Division.views import division_view
-from Subject.views import subject_view
+from Semester.views import semester_mgmt_view,semester_update_view
+from Division.views import division_mgmt_view
+from Subject.views import subject_mgmt_view
 from Exam.views import exam_mgmt_view
+from Profile.views import update_user_profile_view,update_student_profile_view
 
 
 
@@ -45,13 +46,16 @@ urlpatterns = [
     path('course_mgmt/', course_mgmt_view, name='course_mgmt'),
     path('report/', report_view, name='report'),
     path('student_result/', student_result_view, name='student_result'),
-    path('semester/', semester_view, name='semester'),
-    path('division/', division_view, name='division'),
-    path('subject/', subject_view, name='subject'),
+    path('semester_mgmt/', semester_mgmt_view, name='semester_mgmt'),
+    path('division_mgmt/', division_mgmt_view, name='division_mgmt'),
+    path('subject_mgmt/', subject_mgmt_view, name='subject_mgmt'),
     path('faculty_mgmt/', faculty_mgmt_view, name='faculty_mgmt'),
     path('semester_update/', semester_update_view, name='semester_update'),
-    path('exam/', exam_mgmt_view, name='exam'),
-
-
+    path('exam_mgmt/', exam_mgmt_view, name='exam_mgmt'),
+    path('manual_result/', manual_result_view, name='manual_result'),
+    path('update_user_profile/', update_user_profile_view, name='update_user_profile'),
+    path('update_student_profile/', update_student_profile_view, name='update_student_profile'),
+    path('add_user/', add_user_view, name='add_user'),
+    path('about_us/', about_us_view, name='about_us'),
 
 ]

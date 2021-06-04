@@ -46,6 +46,7 @@
 	{% block header %} Semester Management {% endblock header %}
 
 	{% block content %}
+  <!-- Form Coding -->
   <div class="card card-primary" style="width:40%; margin: 4% 30% 0% 30%">
               <!-- Card Header -->
               <div class="card-header">
@@ -61,16 +62,22 @@
                   <div class="form-group">
                     <label for="semester_name">Enter Semester Name</label>
                     <div class="input-group-prepend">
-                    <!-- <span class="input-group-text"><i class="fas fa-user"></i></span> -->
-                    <input type="text" name="semester_name" class="form-control " id="semester_name" placeholder="MCA Sem-1" aria-invalid="true" aria-describedby="semester_name">
+                    <input type="text" name="semester_name" class="form-control " id="semester_name" placeholder="Semester 1" aria-invalid="true" aria-describedby="semester_name">
                     </div>
-                    <!--class="form-control is-invalid"-->
-                  <!--<span id="exampleInputEmail1-error" class="error invalid-feedback">Please enter a vaild email address</span>-->
                 </div>
+
+                <div class="form-group">
+                        <select class="form-control">
+                          <option selected="true">--Select Course--</option>
+                          <option>MCA</option>
+                          <option>MBA</option>
+                          <option>BCA</option>
+                        </select>
+                  </div>
                 </div>
                 <!-- /.card-body -->
+
                 <div class="card-footer">
-                  
                     <button type="submit" class="btn btn-primary">
                       <i class="fas fa-plus"></i> Add
                     </button>
@@ -83,12 +90,14 @@
                       <i class="fas fa-trash-alt"></i> Delete
                     </button>
 
-                    <button type="submit" class="btn btn-warning">
+                    <button type="reset" class="btn btn-warning">
                       <i class="fas fa-times-circle"></i> Clear
                     </button>
                 </div>
               </form>
   </div>
+
+  <!-- Table Coding -->
   <div class="card card-info" style="margin-top: 8%">
                <div class="card-header">
                 <h3 class="card-title" style="font-weight: bold; font-family: sans-serif; height: 13px;">
@@ -98,35 +107,40 @@
               <!-- /.card-header -->
               
               <div class="card-body">
-                <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="report" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="semester_mgmt" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
 
                   <thead>
                   <tr role="row">
                    
                     <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Semester Id</th>
-                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Semester Name</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Course</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Semester</th>
                   </tr>
                   </thead>
 
                   <tbody>
                   <tr class="odd">
                     <td>1</td>
-                    <td>MCA Sem-1</td>
+                    <td>MCA</td>
+                    <td>Semester 1</td>
                   </tr>
 
                   <tr class="even">
                     <td>2</td>
-                    <td>BBA Sem-2</td>
+                    <td>BCA</td>
+                    <td>Semester 2</td>
                   </tr>
 
                   <tr class="odd">
                     <td>3</td>
-                    <td>BCA Sem-3</td>
+                    <td>BBA</td>
+                    <td>Semester 3</td>
                   </tr>
 
                   <tr class="even">
                     <td>4</td>
-                    <td>MBA Sem-1</td>
+                    <td>MBA</td>
+                    <td>Semester 4</td>
                   </tr>                  
                   </tbody>
                 
@@ -135,7 +149,7 @@
                 <div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 4 of 10 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="example1_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
               </div>
               <!-- /.card-body -->
-            </div>
+  </div>
     {% endblock content %}
 
 

@@ -8,7 +8,7 @@
 	<title></title>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title%} Subject Management {% endblock title %}</title>
+  <title>{% block title%} Manual Result {% endblock title %}</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -43,34 +43,75 @@
 
 <body>
 	<!-- Page header -->
-	{% block header %} Subject Management {% endblock header %}
+	{% block header %} Manual Result {% endblock header %}
 
 	{% block content %}
-  <div class="card card-primary" style="width:40%; margin: 4% 30% 0% 30%">
+
+    <div class="card card-primary" style="width:40%; margin: 0% 30% 0% 30%">
               <!-- Card Header -->
               <div class="card-header">
-                <h3 class="card-title" style="font-weight: bold; font-family: sans-serif; height: 13px;">
+                <h3 class="card-title">
                   
                 </h3>
               </div>
               <!-- /.card-header -->
 
               <!-- form start -->
-              <form id="subj_mgmt" novalidate="novalidate" method="get">
+              <form id="manual_result" novalidate="novalidate" method="get">
                 <div class="card-body">
+
                   <div class="form-group">
-                    <label for="subj_name">Enter Subject Name</label>
+                        <select class="form-control">
+                          <option selected="true">--Select Course--</option>
+                          <option>MCA</option>
+                          <option>MBA</option>
+                          <option>BCA</option>
+                        </select>
+                  </div>
+
+                  <div class="form-group">
+                        <select class="form-control">
+                          <option selected="true">--Select Semester--</option>
+                          <option>Semester 1</option>
+                          <option>Semester 2</option>
+                          <option>Semester 3</option>
+                        </select>
+                  </div>
+
+                  <div class="form-group">
+                        <select class="form-control">
+                          <option selected="true">--Select Faculty--</option>
+                          <option>Prof. Harish Morwani</option>
+                          <option>prof. Hardik Soni</option>
+                          <option>Prof. Kruti Jani</option>
+                        </select>
+                  </div>
+
+                  <div class="form-group">
+                        <select class="form-control">
+                          <option selected="true">--Select Exam--</option>
+                          <option>Python Unit 1</option>
+                          <option>Ds Unit 2</option>
+                          <option>Laravel Unit 3</option>
+                        </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="enrollment_number">Enter Enrollment Number</label>
                     <div class="input-group-prepend">
-                    <!-- <span class="input-group-text"><i class="fas fa-user"></i></span> -->
-                    <input type="text" name="subject_name" class="form-control " id="subject_name" placeholder="Python" aria-invalid="true" aria-describedby="subject_name">
+                    <input type="number" name="enrollment_number" class="form-control " id="enrollment_number" placeholder="205350694034" aria-invalid="true" aria-describedby="enrollment_number">
                     </div>
-                    <!--class="form-control is-invalid"-->
-                  <!--<span id="exampleInputEmail1-error" class="error invalid-feedback">Please enter a vaild email address</span>-->
+                </div>
+
+                <div class="form-group">
+                    <label for="marks_obtained">Enter Marks obtained</label>
+                    <div class="input-group-prepend">
+                    <input type="number" name="marks_obtained" class="form-control " id="marks_obtained" placeholder="65" aria-invalid="true" aria-describedby="marks_obtained">
+                    </div>
                 </div>
                 </div>
-                <!-- /.card-body -->
+
                 <div class="card-footer">
-                  
                     <button type="submit" class="btn btn-primary">
                       <i class="fas fa-plus"></i> Add
                     </button>
@@ -83,14 +124,20 @@
                       <i class="fas fa-trash-alt"></i> Delete
                     </button>
 
-                    <button type="submit" class="btn btn-warning">
+                    <button type="reset" class="btn btn-warning">
                       <i class="fas fa-times-circle"></i> Clear
                     </button>
                 </div>
-              </form>
-  </div>
+              </form> 
+              <!-- /.card-body -->
 
-   <div class="card card-info" style="margin-top: 8%">
+    </div>
+    <!-- /.card -->
+
+
+
+  <!-- Table Coding -->
+  <div class="card card-info" style="margin-top: 8%">
                <div class="card-header">
                 <h3 class="card-title" style="font-weight: bold; font-family: sans-serif; height: 13px;">
                   
@@ -99,35 +146,60 @@
               <!-- /.card-header -->
               
               <div class="card-body">
-                <div id="example4_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="report" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="manual_result" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
 
                   <thead>
                   <tr role="row">
                    
-                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Subject Id</th>
-                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Subject Name</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Result Id</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Course</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Semester</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Exam Name</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Enrollment No</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Marks obtained</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Status</th>
                   </tr>
                   </thead>
 
                   <tbody>
                   <tr class="odd">
                     <td>1</td>
-                    <td>Python</td>
+                    <td>MCA</td>
+                    <td>Semester 1</td>
+                    <td>Python Unit 1</td>
+                    <td>205350694034</td>
+                    <td>69</td>
+                    <td>Pass</td>
                   </tr>
 
                   <tr class="even">
                     <td>2</td>
-                    <td>Mobile Computing</td>
+                    <td>MCA</td>
+                    <td>Semester 2</td>
+                    <td>Ds Unit 1</td>
+                    <td>205350694035</td>
+                    <td>65</td>
+                    <td>Pass</td>
                   </tr>
 
                   <tr class="odd">
                     <td>3</td>
-                    <td>Discrete Mathematics</td>
+                    <td>BCA</td>
+                    <td>Semester 1</td>
+                    <td>Python Unit 1</td>
+                    <td>205350694036</td>
+                    <td>62</td>
+                    <td>Pass</td>
                   </tr>
 
                   <tr class="even">
                     <td>4</td>
-                    <td>Java</td>
+                    <td>BCA</td>
+                    <td>Semester 4</td>
+                    <td>Java Unit 1</td>
+                    <td>205350694038</td>
+                    <td>60</td>
+                    <td>Pass</td>
                   </tr>                  
                   </tbody>
                 
@@ -136,7 +208,7 @@
                 <div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 4 of 10 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="example1_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
               </div>
               <!-- /.card-body -->
-            </div>
+  </div>          
     {% endblock content %}
 
 

@@ -46,7 +46,8 @@
 	{% block header %} Exam Management {% endblock header %}
 
 	{% block content %}
-  <div class="card card-primary" style="width:40%; margin: 4% 30% 0% 30%">
+  <!-- Form Coding -->
+  <div class="card card-primary" style="width:40%; margin: 0% 30% 0% 30%">
               <!-- Card Header -->
               <div class="card-header">
                 <h3 class="card-title" style="font-weight: bold; font-family: sans-serif; height: 13px;">
@@ -71,22 +72,22 @@
 
                      <div class="form-group">
                     <label for="exam_name">Enter Exam Name</label>
-                    <input type="text" name="ename" class="form-control" id="ename" placeholder="Python Unit-1" aria-invalid="true" aria-describedby="username-error">
+                    <input type="text" name="exam_name" class="form-control" id="exam_name" placeholder="Python Unit-1" aria-invalid="true" aria-describedby="username-error">
                   </div>
                  
                   <div class="form-group">
-                    <label for="exam_name">Enter Total Marks </label>
-                    <input type="number" name="emarks" class="form-control" id="emarks" placeholder="70" aria-invalid="true" aria-describedby="username-error">
+                    <label for="tot_marks">Enter Total Marks </label>
+                    <input type="number" name="tot_marks" class="form-control" id="tot_marks" placeholder="70" aria-invalid="true" aria-describedby="username-error">
                   </div>
 
                    <div class="form-group">
-                    <label for="exam_name">Enter Passing  Marks </label>
-                    <input type="number" name="epmarks" class="form-control" id="epmarks" placeholder="35" aria-invalid="true" aria-describedby="username-error">
+                    <label for="passing_marks">Enter Passing  Marks </label>
+                    <input type="number" name="passing_marks" class="form-control" id="passing_marks" placeholder="35" aria-invalid="true" aria-describedby="username-error">
                   </div>
 
                    <div class="form-group">
-                    <label for="exam_name">Enter Exam Date </label>
-                    <input type="date" name="edate" class="form-control" id="edate" placeholder="01/10/2021" aria-invalid="true" aria-describedby="username-error">
+                    <label for="exam_date">Enter Exam Date </label>
+                    <input type="date" name="exam_date" class="form-control" id="exam_date" placeholder="01/10/2021" aria-invalid="true" aria-describedby="username-error">
                   </div>
                
                 </div>
@@ -105,12 +106,14 @@
                       <i class="fas fa-trash-alt"></i> Delete
                     </button>
 
-                    <button type="submit" class="btn btn-warning">
+                    <button type="reset" class="btn btn-warning">
                       <i class="fas fa-times-circle"></i> Clear
                     </button>
                 </div>
               </form>
   </div>
+
+  <!-- Table Coding -->
   <div class="card card-info" style="margin-top: 8%">
                <div class="card-header">
                 <h3 class="card-title" style="font-weight: bold; font-family: sans-serif; height: 13px;">
@@ -120,14 +123,14 @@
               <!-- /.card-header -->
               
               <div class="card-body">
-                <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="report" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="exam_mgmt" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
 
                   <thead>
                   <tr role="row">
                    
                     <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Exam Id</th>
                     <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Semester</th>
-                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Subject Name</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Subject</th>
                     <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Exam Name</th>
                     <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Total Marks</th>
                     <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Passing Marks</th>

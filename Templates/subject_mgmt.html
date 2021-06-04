@@ -8,7 +8,7 @@
 	<title></title>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title%} Division Management {% endblock title %}</title>
+  <title>{% block title%} Subject Management {% endblock title %}</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -43,7 +43,7 @@
 
 <body>
 	<!-- Page header -->
-	{% block header %} Division Management {% endblock header %}
+	{% block header %} Subject Management {% endblock header %}
 
 	{% block content %}
   <div class="card card-primary" style="width:40%; margin: 4% 30% 0% 30%">
@@ -56,23 +56,29 @@
               <!-- /.card-header -->
 
               <!-- form start -->
-              <form id="division_mgmt" novalidate="novalidate" method="get">
+              <form id="subject_mgmt" novalidate="novalidate" method="get">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="division_name">Enter Division Name</label>
+                    <label for="subject_name">Enter Subject Name</label>
+                    <div class="input-group-prepend">
+                    <input type="text" name="subject_name" class="form-control " id="subject_name" placeholder="Python" aria-invalid="true" aria-describedby="subject_name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject_code">Enter Subject Code</label>
                     <div class="input-group-prepend">
                     <!-- <span class="input-group-text"><i class="fas fa-user"></i></span> -->
-                    <input type="text" name="division_name" class="form-control " id="division_name" placeholder="Division-A" aria-invalid="true" aria-describedby="divisionr_name">
+                    <input type="text" name="subject_code" class="form-control " id="subject_code" placeholder="619403" aria-invalid="true" aria-describedby="subject_name">
                     </div>
-                  </div>
+                </div>
 
-                    <div class="form-group">
+                <div class="form-group">
                         <select class="form-control">
                           <option selected="true">--Select Course--</option>
                           <option>MCA</option>
                           <option>MBA</option>
                           <option>BCA</option>
-                          <option>BBA</option>
                         </select>
                   </div>
 
@@ -82,13 +88,11 @@
                           <option>Semester 1</option>
                           <option>Semester 2</option>
                           <option>Semester 3</option>
-                          <option>Semester 4</option>
                         </select>
                   </div>
-                    <!--class="form-control is-invalid"-->
-                  <!--<span id="exampleInputEmail1-error" class="error invalid-feedback">Please enter a vaild email address</span>-->
                 </div>
                 <!-- /.card-body -->
+
                 <div class="card-footer">
                   
                     <button type="submit" class="btn btn-primary">
@@ -103,14 +107,14 @@
                       <i class="fas fa-trash-alt"></i> Delete
                     </button>
 
-                    <button type="submit" class="btn btn-warning">
+                    <button type="reset" class="btn btn-warning">
                       <i class="fas fa-times-circle"></i> Clear
                     </button>
                 </div>
               </form>
   </div>
 
-  <div class="card card-info" style="margin-top: 8%">
+   <div class="card card-info" style="margin-top: 8%">
                <div class="card-header">
                 <h3 class="card-title" style="font-weight: bold; font-family: sans-serif; height: 13px;">
                   
@@ -119,40 +123,44 @@
               <!-- /.card-header -->
               
               <div class="card-body">
-                <div id="example3_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="report" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                <div id="example4_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="subject_mgmt" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
 
                   <thead>
                   <tr role="row">
-                   
-                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Division Id</th>
-                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Division Name</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Subject Id</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Course</th>
                     <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Semester</th>
+                    <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Subject</th>
                   </tr>
                   </thead>
 
                   <tbody>
                   <tr class="odd">
                     <td>1</td>
-                    <td>Division-A</td>
-                    <td>Semester-1</td>
+                    <td>MCA</td>
+                    <td>1</td>
+                    <td>Python</td>
                   </tr>
 
                   <tr class="even">
                     <td>2</td>
-                    <td>Division-B</td>
-                    <td>Semester-2</td>
+                    <td>BCA</td>
+                    <td>4</td>
+                    <td>Mobile Computing</td>
                   </tr>
 
                   <tr class="odd">
                     <td>3</td>
-                    <td>Division-A</td>
-                    <td>Semester-3</td>
+                    <td>MCA</td>
+                    <td>1</td>
+                    <td>Discrete Mathematics</td>
                   </tr>
 
                   <tr class="even">
                     <td>4</td>
-                    <td>Division-B</td>
-                    <td>Semester-4</td>
+                    <td>MCA</td>
+                    <td>1</td>
+                    <td>Java</td>
                   </tr>                  
                   </tbody>
                 

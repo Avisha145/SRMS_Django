@@ -10,3 +10,6 @@ def import_user_view(request):
 
 def homepage_view(request):
 	return render(request, 'home.html', {})
+
+def add_user_view(request):
+	return render(request, 'add_user.html', {})
