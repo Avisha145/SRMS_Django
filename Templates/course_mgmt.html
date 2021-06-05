@@ -57,7 +57,8 @@
               <!-- /.card-header -->
 
               <!-- form start -->
-              <form id="course_mgmt" novalidate="novalidate" method="get">
+              <form id="course_mgmt"  method="post">
+                  {% csrf_token %}
                 <div class="card-body">
 
                   <div class="form-group">
@@ -126,23 +127,13 @@
                     <td>prof. Hardik Soni</td>
                   </tr>
 
-                  <tr class="even">
-                    <td>2</td>
-                    <td>MBA</td>
-                    <td>Prof. Harish Morwani</td>
+                  {% for course in courses %}
+                  <tr>
+                      <td> {{course.course_id}} </td>
+                      <td> {{course.course_name}} </td>
+                      <td> {{course.name}} </td>
                   </tr>
-
-                  <tr class="odd">
-                    <td>3</td>
-                    <td>BCA</td>
-                    <td>Prof. Kruti Jani</td>
-                  </tr>
-
-                  <tr class="even">
-                    <td>4</td>
-                    <td>MCA</td>
-                    <td>prof. Hardik Soni</td>
-                  </tr>                  
+                  {% endfor %}
                   </tbody>
                 
                 </table></div></div>
